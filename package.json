@@ -9,7 +9,7 @@
     "discord.js": "^12.1.1",
     "fast-xml-parser": "^3.17.4",
     "moment": "^2.24.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "request": "^2.88.2"
   },
   "devDependencies": {},

@@ -4,8 +4,8 @@
 	"description": "Its Komet but for JS!",
 	"main": "index.js",
 	"dependencies": {
-		"discord.js": "^12.4.1",
-		"fast-xml-parser": "^3.17.4",
+		"discord.js": "^12.5.1",
+		"fast-xml-parser": "^3.17.5",
 		"node-fetch": "^2.6.1"
 	},
 	"scripts": {

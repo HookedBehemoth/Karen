@@ -10,10 +10,10 @@ module.exports = [
 			try {
 				const { exec } = require("child_process");
 				exec("git pull", (error, stdout, stderr) => {
-					respond('', `\`\`\`stdout:\n${stdout}\n\nstderr:\n${stderr}\n\nerror:\n${error}\`\`\``, message.channel)
+					message.channel.send(`\`\`\`stdout:\n${stdout}\n\nstderr:\n${stderr}\n\nerror:\n${error}\`\`\``)
 				});
 			} catch (error) {
-				respond('Error', 'Something went wrong.\n' + error + `\nMessage: ${message}\nArgs: ${args}\n`, message.channel)
+				message.channel.send('Something went wrong.\n' + error + `\nMessage: ${message}\nArgs: ${args}\n`)
 				errorlog(error)
 				// Your code broke (Leave untouched in most cases)
 				console.error('an error has occured', error);
@@ -45,7 +45,7 @@ module.exports = [
 				console.log(error);
 				return message.channel.send(`There was an error while reloading a command \`${allcommandName}\`:\n\`${error.message}\``);
 			}
-			respond('', `Command \`${allcommandName}\` was reloaded!`, message.channel);
+			message.channel.send(`Command \`${allcommandName}\` was reloaded!`);
 		},
 	}, {
 		name: 'restart',
@@ -62,7 +62,7 @@ module.exports = [
 					process.exit()
 				}, 3000);
 			} catch (error) {
-				respond('Error', 'Something went wrong.\n' + error + `\nMessage: ${message}\nArgs: ${args}\n`, message.channel)
+				message.channel.send('Something went wrong.\n' + error + `\nMessage: ${message}\nArgs: ${args}\n`)
 				errorlog(error)
 				// Your code broke (Leave untouched in most cases)
 				console.error('an error has occured', error);

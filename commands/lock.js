@@ -8,21 +8,8 @@ module.exports = [
 		mod: true,
 		execute(message, args) {
 			const channel = message.channel
-			const reason = args.join(' ')
-			try {
-				channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
-				if (args != '') {
-					respond('🔒', '<#' + channel + '> was locked.\nReason: ' + reason, channel)
-				} else {
-					respond('🔒', '<#' + channel + '> was locked.\n', channel)
-				}
-				modaction(this.name, message.author.tag, channel.name, message.content)
-			}
-			catch (error) {
-				// Your code broke (Leave untouched in most cases)
-				console.error('an error has occured', error);
-			}
-
+			channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
+			channel.send('🔒', '<#' + channel + '> was locked.\n')
 		}
 	},
 	{
@@ -34,21 +21,8 @@ module.exports = [
 		mod: true,
 		execute(message, args) {
 			const channel = message.channel
-			const reason = args.join(' ')
-			try {
-				channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: true });
-				if (args != '') {
-					respond('🔒', '<#' + channel + '> was unlocked.\nReason: ' + reason, channel)
-				} else {
-					respond('🔒', '<#' + channel + '> was unlocked.\n', channel)
-				}
-				modaction(this.name, message.author.tag, channel.name, message.content)
-			}
-			catch (error) {
-				// Your code broke (Leave untouched in most cases)
-				console.error('an error has occured', error);
-			}
-
+			channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: true });
+			channel.send('🔒', '<#' + channel + '> was unlocked.\n', channel)
 		}
 	}
 ]

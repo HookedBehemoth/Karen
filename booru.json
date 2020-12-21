@@ -14,5 +14,14 @@
             "inubashiri_momiji",
             "rating:safe"
         ]
-    }
+	},
+	"awooo": {
+        "name": "Awooo",
+        "desc": "AWOOOOO!!!",
+        "tags": [
+            "inubashiri_momiji",
+            "rating:explicit"
+		],
+		"whitelist": ["709864409933283339"]
+	}
 }

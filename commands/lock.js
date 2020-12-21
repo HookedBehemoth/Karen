@@ -9,7 +9,7 @@ module.exports = [
 		execute(message, args) {
 			const channel = message.channel
 			channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
-			channel.send('🔒', '<#' + channel + '> was locked.\n')
+			channel.send(`🔒 <#${channel.id}> was locked. 🔒`)
 		}
 	},
 	{
@@ -21,8 +21,8 @@ module.exports = [
 		mod: true,
 		execute(message, args) {
 			const channel = message.channel
-			channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: true });
-			channel.send('🔒', '<#' + channel + '> was unlocked.\n', channel)
+			channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: null });
+			channel.send(`:unlock: <#${channel.id}> was unlocked. :unlock:`)
 		}
 	}
 ]

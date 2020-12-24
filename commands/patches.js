@@ -4,7 +4,7 @@ module.exports = [
 		description: 'Shows helpful patch stuff',
 		aliases: ['patches'],
 		execute(message, args) {
-			message.channel.send(`For pirated eshop-games you need ES signature patches. As their only purpose is to allow piracy we're not providing any help with installation of said patches or pirated games afterwards`)
+			message.channel.send(`For pirated eshop-games you need ES signature patches. You can find the latest ones here https://github.com/ITotalJustice/patches/releases/latest.`)
 		}
 	}, {
 		name: 'bs',

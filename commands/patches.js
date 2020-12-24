@@ -4,7 +4,10 @@ module.exports = [
 		description: 'Shows helpful patch stuff',
 		aliases: ['patches'],
 		execute(message, args) {
-			message.channel.send(`For pirated eshop-games you need ES signature patches. You can find the latest ones here https://github.com/ITotalJustice/patches/releases/latest.`)
+			message.channel.send(
+				`For pirated eshop-games, gamecard installs and garbage-"homebrew"-NSPs you need patches for the system to allow that.`+
+				`You can find the latest ones here https://github.com/ITotalJustice/patches/releases/latest.`
+			)
 		}
 	}, {
 		name: 'bs',

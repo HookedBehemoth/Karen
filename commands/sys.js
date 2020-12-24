@@ -6,7 +6,7 @@ module.exports = [
 		mod: true,
 		botmanager: true,
 		essential: true,
-		execute(message, args, client) {
+		execute(message, args) {
 			try {
 				const { exec } = require("child_process");
 				exec("git pull", (error, stdout, stderr) => {
@@ -29,8 +29,8 @@ module.exports = [
 		botmanager: true,
 		execute(message, args) {
 			const allcommandName = args[0].toLowerCase();
-			const command = message.client.allcommands.get(allcommandName)
-				|| message.client.allcommands.find(cmd => cmd.aliases && cmd.aliases.includes(allcommandName));
+			const command = message.client.commands.get(allcommandName)
+				|| message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(allcommandName));
 
 			if (!command) {
 				return message.channel.send(`There is no command with name or alias \`${allcommandName}\`, ${message.author}!`);
@@ -40,7 +40,7 @@ module.exports = [
 
 			try {
 				const newCommand = require(`./${allcommandName}.js`);
-				message.client.allcommands.set(newCommand.name, newCommand);
+				message.client.commands.set(newCommand.name, newCommand);
 			} catch (error) {
 				console.log(error);
 				return message.channel.send(`There was an error while reloading a command \`${allcommandName}\`:\n\`${error.message}\``);

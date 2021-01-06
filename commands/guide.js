@@ -30,6 +30,7 @@ module.exports = [
 		},
 	}, {
 		name: 'exfat',
+		aliases: ['fat32'],
 		description: 'Displays info on why not to use exfat',
 		execute(message, args) {
 			const Discord = require('discord.js');

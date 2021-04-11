@@ -49,7 +49,7 @@ module.exports = [
 			const Discord = require('discord.js');
 			const client = new Discord.Client();
 			message.channel.send(
-				`Gamecart Controller Updates (4.0.0, 9.0.0, 11.0.0, and 12.0.0)\n` +
+				`**Gamecart Controller Updates (4.0.0, 9.0.0, 11.0.0, and 12.0.0)**\n` +
 				`In 4.0.0, 9.0.0, 11.0.0 and 12.0.0, Nintendo updated the gamecard controller ("lotus") to a new version, so if you update to one of these firmware ranges, it'll lock you out of running gamecards on all lower ranges.\n` +
 				`This is because lotus keeps track of its firmware updates independently of the main SoC. As lotus cannot be hacked, updating it is a hard requirement to get cards working on newer versions.\n` +
 				`\n` +
@@ -59,12 +59,12 @@ module.exports = [
 				`\n` +
 				`If you want to run gamecarts on the latest firmware versions, and don't mind losing out on older firmware versions, do one of the following:\n` +
 				`\n` +
-				`If you boot with Hekate:\n` +
+				`**If you boot with Hekate:**\n` +
 				`1. Go to Options, in the top right corner\n` +
-				`2. Turn ":shrek: Auto NoGC" to OFF                                  (yes, it's really ":shrek: Auto NoGC")\n` +
+				`2. Turn "<:shrek:709856198077317140> Auto NoGC" to OFF                                  (yes, it's really "<:shrek:709856198077317140> Auto NoGC")\n` +
 				`3. Save Options, at the bottom center of the screen.\n` +
 				`\n` +
-				`If you boot with Atmosphere Fusée:\n` +
+				`**If you boot with Atmosphere Fusée:**\n` +
 				`1. Open atmosphere/config/BCT.ini in a text editor, on a PC, Mac, or Android device. If it doesn't exist, copy the template from atmosphere/config_templates/\n` +
 				`2. Under the section labeled [stratosphere], force-disable nogc by adding the line nogc = 0`
 			)

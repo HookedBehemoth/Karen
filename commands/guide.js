@@ -42,6 +42,18 @@ module.exports = [
 			)
 		},
 	},  {
+		name: 'mariko',
+		aliases: ['youcant'],
+		description: 'Displays information on why you cannot hack Mariko units',
+		execute(message, args) {
+			const Discord = require('discord.js');
+			const client = new Discord.Client();
+			message.channel.send(
+				`Hacking a Mariko Switch (new models with higher battery life and Switch Lite) requires a modchip that was deemed by US courts to be illegal to sell within the United States.\n\n`+
+				`Following this decision, and the arrest of people associated with the group who produced the modchip, the modchip is not practical to purchase, and therefore hacking one of these Switches is currently not possible.`
+			)
+		},
+	},  {
 		name: 'lotus',
 		aliases: ['gamecard', 'gc'],
 		description: 'Lotus downgrade info',
